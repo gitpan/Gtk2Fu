@@ -107,7 +107,7 @@ use vars qw(@ISA %EXPORT_TAGS @EXPORT_OK $VERSION);
 $EXPORT_TAGS{all} = [ map { @$_ } values %EXPORT_TAGS ];
 @EXPORT_OK = map { @$_ } values %EXPORT_TAGS;
 
-$VERSION = '0.04';
+$VERSION = '0.05';
 
 Gtk2->init;
 
@@ -167,9 +167,17 @@ push @EXPORT_OK, qw(create_full_menubar);
                                             [ "/File/_New" ,"<control>N" ,\&callback,0 ,"<StockItem>" ,"gtk-new" ,"create a new file" ],
                                           ],
                                           $start_path='<main>');
+  ($menubar, $factory) = $window->create_full_menubar($menu_items=
+                                          [
+                                            [ "/_File" ,undef,0 ,0 ,"<Branch>" ],
+                                            [ "/File/_New" ,"<control>N" ,\&callback,0 ,"<StockItem>" ,"gtk-new" ,"create a new file" ],
+                                          ],
+                                          $start_path='<main>');
 
-Creates a full menubar with menuitems of any type, and shortcuts. Returns the
-menubar ready to be added in a box for instance. $start_path is optional.
+Creates a full menubar with menuitems of any type, and shortcuts. In scalar
+context, returns the menubar ready to be added in a box for instance. In list
+context, returns the menubar widget, and the factory, for advanced use.
+$start_path is optional.
 
 =cut
 
@@ -177,9 +185,10 @@ sub create_full_menubar {
     my ($w, $menu_items, $start_path) = @_;
     $start_path ||= '<main>';
     $w->add_accel_group(my $accel = Gtk2::AccelGroup->new());
-    Gtk2::ItemFactory->new('Gtk2::MenuBar', $start_path, $accel)
-      ->create_items_($w, @$menu_items)
-      ->get_widget($start_path);
+    my $f = Gtk2::ItemFactory->new('Gtk2::MenuBar', $start_path, $accel);
+    my $w = $f->create_items_($w, @$menu_items)
+              ->get_widget($start_path);
+    wantarray ? ($w, $f) : $w;
 }
 
 package Gtk2::Widget;
@@ -722,5 +731,11 @@ sub if_($@) {
     ->show_all_();
   $darea->size(-1, 38);
 
+
+=head1 COPYRIGHT
+
+Copyright (c) 2004-2005 Damien Krotkine. All rights reserved.
+This program is free software; you can redistribute it and/or modify
+it under the same terms as Perl itself.
 
 =cut
