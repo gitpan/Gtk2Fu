@@ -107,7 +107,7 @@ use vars qw(@ISA %EXPORT_TAGS @EXPORT_OK $VERSION);
 $EXPORT_TAGS{all} = [ map { @$_ } values %EXPORT_TAGS ];
 @EXPORT_OK = map { @$_ } values %EXPORT_TAGS;
 
-$VERSION = '0.05';
+$VERSION = '0.06';
 
 Gtk2->init;
 
@@ -597,6 +597,12 @@ join (' ', map { qq(sub ${_}_{ (my \$w=shift)->$_(\@_); \$w }) } @b)); } foreach
 
 )], [qw (
 
+  Gtk2::Button
+    clicked enter set_label leave pressed released set_relief set_use_stock
+    set_use_underline
+
+)], [qw (
+
   Gtk2::ButtonBox
     set_layout set_child_size set_child_ipadding set_child_secondary
 
@@ -632,7 +638,36 @@ join (' ', map { qq(sub ${_}_{ (my \$w=shift)->$_(\@_); \$w }) } @b)); } foreach
     set_has_frame set_width_chars set_alignment get_layout_offsets
     set_completion
 
+)], [qw (
+
+  Gtk2::Table
+
+    attach attach_defaults set_col_spacing set_col_spacings set_homogeneous
+    resize set_row_spacing set_row_spacings
+
+)], [qw (
+
+  Gtk2::TextView
+
+    set_accepts_tab add_child_at_anchor add_child_in_window
+    set_border_window_size set_buffer set_cursor_visible set_editable
+    set_indent set_justification set_left_margin move_child set_overwrite
+    set_pixels_above_lines set_pixels_below_lines set_pixels_inside_wrap
+    set_right_margin scroll_mark_onscreen scroll_to_mark set_tabs set_wrap_mode
+
+)], [qw (
+
+  Gtk2::TextBuffer
+
+    add_selection_clipboard apply_tag apply_tag_by_name begin_user_action
+    copy_clipboard cut_clipboard delete delete_mark delete_mark_by_name
+    end_user_action insert insert_at_cursor insert_child_anchor insert_pixbuf
+    insert_range insert_with_tags insert_with_tags_by_name set_modified
+    move_mark move_mark_by_name paste_clipboard place_cursor remove_all_tags
+    remove_selection_clipboard remove_tag remove_tag_by_name set_text
+
 )],
+
 
 ######### DEPRECATED API #########
 
