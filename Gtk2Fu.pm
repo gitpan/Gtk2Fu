@@ -107,9 +107,7 @@ use vars qw(@ISA %EXPORT_TAGS @EXPORT_OK $VERSION);
 $EXPORT_TAGS{all} = [ map { @$_ } values %EXPORT_TAGS ];
 @EXPORT_OK = map { @$_ } values %EXPORT_TAGS;
 
-$VERSION = '0.06';
-
-Gtk2->init;
+$VERSION = '0.07';
 
 =head2 METHODS for creation
 
