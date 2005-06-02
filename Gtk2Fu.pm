@@ -1,5 +1,7 @@
 package Gtk2Fu;
 
+sub is_installed { (my $mod = "$_[0].pm" ) =~ s!::!/!g; -e "$_/$mod" && return 1 for @INC }
+
 =head1 NAME
 
 Gtk2Fu - GTK2 Forked Ultimate, a powerful layer on top of Gtk2. (forked from ugtk2.)
@@ -68,21 +70,203 @@ return the widget. If you need one that is not yet done, mail me at
 =head3 implemented derivated methods
 
 the derivated methods are implemented only for original methods that return
-nothing (void). Here is the list of gtk2 classes that have derivated methods
-implemented:
+nothing (void). Here is the list of derivated methodes, ordered by classes:
 
-Glib::Object Gtk2::Object Gtk2::Widget Gtk2::Container Gtk2::Frame Gtk2::Window
-Gtk2::Box Gtk2::ButtonBox Gtk2::HButtonBox Gtk2::Paned Gtk2::Misc Gtk2::Label
-Gtk2::Entry Gtk2::ItemFactory
+Gnome2::App
+    add_dock_item add_toolbar set_contents create_menus create_toolbar
+    enable_layout_config insert_menus install_menu_hints set_menus
+    remove_menu_range remove_menus set_statusbar_custom set_statusbar
+    set_toolbar
 
-For instance, if you look for Gtk2::Frame in the documentation of gtk2
-(L<http://developer.gnome.org/doc/API/2.0/gtk/GtkFrame.html>) or perl-gtk2
-(L<http://gtk2-perl.sourceforge.net/doc/pod/Gtk2/Frame.html>), you can see that
-the methods that return nothing (or void) are : set_label, set_label_widget,
-set_label_align, set_shadow_type, get_label_align. So, because Gtk2::Frame is
-in the list above, you can use set_label_, set_label_widget_, set_label_align_,
-set_shadow_type_, get_label_align_, which will do the same as the original
-methods, but return the frame.
+Gnome2::AppBar
+    clear_prompt clear_stack set_default install_menu_hints pop
+    set_progress_percentage set_prompt push refresh set_status
+
+Gnome2::AppHelper
+    install_menu_hints_ 
+
+Gnome2::Bonobo::Dock
+    add_floating_item_ add_item_ allow_floating_items_ set_client_area_ 
+
+Gnome2::Bonobo::Dock
+    set_shadow_type_ 
+
+Gnome2::Canvas 
+    set_center_scroll_region_ set_dither_ set_pixels_per_unit_ request_redraw_ 
+    set_scroll_region_ scroll_to_ set_stipple_origin_ update_now_ 
+
+Gnome2::Canvas::Bpath
+    set_path_def_ 
+
+Gnome2::Canvas::Item 
+    affine_absolute_ affine_relative_ grab_focus_ hide_ lower_ lower_to_bottom_ move_ 
+    raise_ raise_to_top_ reparent_ request_update_ reset_bounds_ show_ ungrab_ 
+    update_bbox_ 
+
+Gnome2::Canvas::PathDef
+    closepath_ closepath_current_ curveto_ ensure_space_ finish_ lineto_ 
+    lineto_moving_ moveto_ reset_ 
+
+Gnome2::Canvas::RichText
+    set_buffer_ copy_clipboard_ cut_clipboard_ paste_clipboard_ 
+
+Gnome2::Canvas::Shape
+    set_path_def_ 
+
+Gnome2::Client
+    add_static_arg_ set_clone_command_ connect_ set_current_directory_ 
+    set_discard_command_ disconnect_ set_environment_ flush_ 
+    set_global_config_prefix_ set_priority_ request_interaction_ request_phase_2_ 
+    request_save_ set_resign_command_ set_restart_command_ set_restart_style_ 
+    save_any_dialog_ save_error_dialog_ set_shutdown_command_ 
+
+Gnome2::ColorPicker
+    set_d_ set_dither_ set_i16_ set_i8_ set_title_ set_use_alpha_  
+
+Gnome2::DateEdit
+    set_flags_ set_popup_range_ set_time_  
+
+Gnome2::Druid
+    append_page_ set_buttons_sensitive_ insert_page_ set_page_ prepend_page_ 
+    set_show_finish_ set_show_help_ 
+
+Gnome2::DruidPage
+    finish_ prepare_ 
+
+Gnome2::DruidPageEdge
+    set_bg_color_ set_logo_bg_color_ set_logo_ set_text_color_ set_text_ 
+    set_textbox_color_ set_title_color_ set_title_ set_top_watermark_ set_watermark_ 
+
+Gnome2::DruidPageStandard
+    append_item_ set_background_ set_contents_background_ set_logo_background_ 
+    set_logo_ set_title_foreground_ set_title_ set_top_watermark_ 
+
+Gnome2::DruidPageStandard
+    append_history_ clear_history_ set_history_id_ set_max_saved_ prepend_history_ 
+
+Gnome2::FileEntry 
+    set_default_path_ set_directory_entry_ set_filename_ set_modal_ set_title_ 
+
+Gnome2::FontPicker 
+    fi_set_show_size_ fi_set_use_font_in_label_ set_mode_ set_preview_text_ set_title_ 
+    uw_set_widget_ 
+
+Gnome2::GConf::Client 
+    add_dir_ clear_cache_ set_error_handling_ set_ get_list_ notify_remove_ get_pair_ 
+    preload_ remove_dir_ suggest_sync_ 
+
+Gnome2::GConf::Engine 
+    notify_remove_ remove_dir_ suggest_sync_ 
+
+Gnome2::HRef 
+    set_label_ set_text_ set_url_ 
+
+Gnome2::IconEntry 
+    set_browse_dialog_title_ set_history_id_ set_max_saved_ set_pixmap_subdir_ 
+
+Gnome2::IconList 
+    clear_ set_col_spacing_ focus_icon_ freeze_ set_hadjustment_ set_icon_border_ 
+    set_icon_width_ insert_ insert_pixbuf_ moveto_ remove_ set_row_spacing_ 
+    select_icon_ set_selection_mode_ set_separators_ set_text_spacing_ thaw_ 
+    unselect_icon_ set_vadjustment_ 
+
+Gnome2::IconSelection 
+    add_defaults_ add_directory_ clear_ select_icon_ show_icons_ stop_loading_ 
+
+Gnome2::IconTextItem 
+    configure_ focus_ select_ setxy_ start_editing_ stop_editing_ 
+
+Gnome2::IconTheme 
+    set_allow_svg_ append_search_path_ set_custom_theme_ prepend_search_path_ 
+    set_search_path_ 
+
+Gnome2::PasswordDialog 
+    set_password_ set_readonly_username_ set_username_ 
+
+Gnome2::PixmapEntry 
+    set_pixmap_subdir_ set_preview_ set_preview_size_ 
+
+Gnome2::PopupMenu 
+    add_popup_items_ append_from_ attach_to_ do_popup_ 
+
+Gnome2::Print::Config 
+    dump_ 
+
+Gnome2::Print::Dialog 
+    set_copies_ 
+
+Gnome2::Print::FontPreview 
+    set_color_ set_font_ set_phrase_ 
+
+Gnome2::Print::FontSelection 
+    set_font_ 
+
+Gnome2::Print::GlyphList 
+    advance_ font_ glyph_ kerning_ letterspace_ moveto_ rmoveto_ text_dumb_ 
+
+Gnome2::Print::UnitSelector 
+    add_adjustment_ set_bases_ remove_adjustment_ set_unit_  
+
+Gnome2::Rsvg::Handle 
+    set_dpi_ set_size_callback_ 
+
+Gnome2::Scores 
+    set_color_ set_colors_ set_current_player_ set_def_color_ set_logo_label_ 
+    set_logo_label_title_ set_logo_pixmap_ set_logo_widget_ 
+
+Gnome2::ThumbnailFactory 
+    create_failed_thumbnail_ save_thumbnail_  
+
+Gnome2::VFS::Application 
+    add_mime_type_ set_bool_value_ clear_mime_types_ remove_application_ 
+    remove_mime_type_ unset_key_ set_value_ 
+
+Gnome2::VFS::Async::Handle 
+    cancel_ close_ read_ write_ 
+
+Gnome2::VFS::Mime::Application 
+    save_ 
+
+Gnome2::VFS::URI 
+    set_host_name_ set_host_port_ set_password_ set_user_name_  
+
+Gnome2::Vte::Terminal 
+    set_allow_bold_ set_audible_bellâ_ set_background_image_file_ 
+    set_background_image_ set_background_saturation_ set_background_tint_color_ 
+    set_background_transparent_ set_backspace_binding_ set_color_background_ 
+    set_color_bold_ set_color_dim_ set_color_foreground_ set_colors_ copy_clipboard_ 
+    copy_primary_ set_cursor_blinks_ set_default_colors_ set_delete_binding_ 
+    set_emulation_ set_encoding_ feed_ feed_child_ set_font_from_string_ set_font_ 
+    im_append_menuitems_ match_clear_all_ match_remove_ match_set_cursor_ 
+    match_set_cursor_type_ set_mouse_autohide_ paste_clipboard_ paste_primary_ 
+    reset_ set_scroll_background_ set_scroll_on_keystroke_ set_scroll_on_output_ 
+    set_scrollback_lines_ set_size_ set_visible_bell_ set_word_chars_ 
+
+Gnome2::Window 
+    toplevel_set_title_ 
+
+Gnome2::Wnck::Pager 
+    set_n_rows_ set_orientation_ set_screen_ set_shadow_type_ set_show_all_  
+
+Gnome2::Wnck::Screen 
+    change_workspace_count_ force_update_ move_viewport_ release_workspace_layout_ 
+    toggle_showing_desktop_ 
+
+Gnome2::Wnck::Tasklist 
+    set_grouping_limit_ set_icon_loader_ set_include_all_workspaces_ 
+    set_minimum_height_ set_minimum_width_ set_screen_ 
+    set_switch_workspace_on_unminimize_ 
+
+Gnome2::Wnck::Window 
+    activate_ activate_ activate_transient_ activate_transient_ close_ close_ 
+    set_icon_geometry_ keyboard_move_ keyboard_size_ maximize_ 
+    maximize_horizontally_ maximize_vertically_ minimize_ move_to_workspace_ pin_ 
+    shade_ set_skip_pager_ set_skip_tasklist_ stick_ unmaximize_ 
+    unmaximize_horizontally_ unmaximize_vertically_ unminimize_ unminimize_ unpin_ 
+    unshade_ unstick_ 
+
+Gnome2::Wnck::Workspace 
+    activate_ activate_ change_name_ 
 
 =cut
 
@@ -107,7 +291,7 @@ use vars qw(@ISA %EXPORT_TAGS @EXPORT_OK $VERSION);
 $EXPORT_TAGS{all} = [ map { @$_ } values %EXPORT_TAGS ];
 @EXPORT_OK = map { @$_ } values %EXPORT_TAGS;
 
-$VERSION = '0.07';
+$VERSION = '0.08';
 
 =head2 METHODS for creation
 
@@ -205,7 +389,7 @@ sub create_scrolled_window {
      my ($W, $policy, $viewport_shadow) = @_;
      my $w = Gtk2::ScrolledWindow->new(undef, undef);
      $w->set_policy($policy ? @$policy : ('automatic', 'automatic'));
-     if (Gtk2Fu::member(ref($W), qw(Gtk2::Layout Gtk2::Text Gtk2::TextView Gtk2::TreeView Gtk2::SimpleList))) {
+     if (Gtk2Fu::member(ref($W), qw(Gtk2::Layout Gtk2::Text Gtk2::TextView Gtk2::TreeView Gtk2::SimpleList Gtk2::IconView))) {
  	$w->add($W)
      } else {
  	$w->add_with_viewport($W);
@@ -506,11 +690,18 @@ use vars qw(\@ISA \@EXPORT_OK);
 unshift \@ISA, 'Exporter';
 push \@EXPORT_OK, qw(| . join (' ', map { qq(${_}_) } @b) . ");\n" .
 join (' ', map { qq(sub ${_}_{ (my \$w=shift)->$_(\@_); \$w }) } @b)); } foreach (
+
+########## Glib 
+
 [qw (
   Glib::Object
     signal_connect
 
-)], [qw (
+)],
+
+########## Gtk2
+
+[qw (
 
   Gtk2::Object
     object_sink object_unref object_weakref object_weakunref
@@ -616,6 +807,11 @@ join (' ', map { qq(sub ${_}_{ (my \$w=shift)->$_(\@_); \$w }) } @b)); } foreach
 
 )], [qw (
 
+  Gtk2::ProgressBar
+    set_fraction set_orientation pulse set_pulse_step set_text
+
+)], [qw (
+
   Gtk2::Misc
     set_alignment set_padding get_alignment get_padding
 
@@ -667,7 +863,7 @@ join (' ', map { qq(sub ${_}_{ (my \$w=shift)->$_(\@_); \$w }) } @b)); } foreach
 )],
 
 
-######### DEPRECATED API #########
+# DEPRECATED API #
 
 [qw (
   Gtk2::ItemFactory
@@ -677,8 +873,312 @@ join (' ', map { qq(sub ${_}_{ (my \$w=shift)->$_(\@_); \$w }) } @b)); } foreach
 
  )],
 
-######### DEPRECATED API #########
+########## Gnome2
+!is_installed('Gnome2') ? () :
+(
 
+[qw (
+
+  Gnome2::App
+    add_dock_item add_toolbar set_contents create_menus create_toolbar
+    enable_layout_config insert_menus install_menu_hints set_menus
+    remove_menu_range remove_menus set_statusbar_custom set_statusbar
+    set_toolbar
+
+)], [qw (
+
+  Gnome2::AppBar
+    clear_prompt clear_stack set_default install_menu_hints pop
+    set_progress_percentage set_prompt push refresh set_status
+
+)], [qw (
+
+Gnome2::AppHelper
+    $bar->install_menu_hints ($uiinfo) 
+
+)], [qw (
+
+Gnome2::Bonobo::Dock
+    add_floating_item add_item allow_floating_items set_client_area
+
+)], [qw (
+
+Gnome2::Bonobo::Dock
+    set_shadow_type
+
+)], [qw (
+
+Gnome2::Canvas
+    set_center_scroll_region set_dither set_pixels_per_unit request_redraw
+    set_scroll_region scroll_to set_stipple_origin update_now
+
+)], [qw (
+
+Gnome2::Canvas::Bpath
+    set_path_def
+
+)], [qw (
+
+Gnome2::Canvas::Item
+    affine_absolute affine_relative grab_focus hide lower lower_to_bottom move
+    raise raise_to_top reparent request_update reset_bounds show ungrab
+    update_bbox
+
+)], [qw (
+
+Gnome2::Canvas::PathDef
+    closepath closepath_current curveto ensure_space finish lineto
+    lineto_moving moveto reset
+
+)], [qw (
+
+Gnome2::Canvas::RichText
+    set_buffer copy_clipboard cut_clipboard paste_clipboard
+
+)], [qw (
+
+Gnome2::Canvas::Shape
+    set_path_def
+
+)], [qw (
+
+Gnome2::Client
+    add_static_arg set_clone_command connect set_current_directory
+    set_discard_command disconnect set_environment flush
+    set_global_config_prefix set_priority request_interaction request_phase_2
+    request_save set_resign_command set_restart_command set_restart_style
+    save_any_dialog save_error_dialog set_shutdown_command
+
+)], [qw (
+
+Gnome2::ColorPicker
+    set_d set_dither set_i16 set_i8 set_title set_use_alpha  
+
+)], [qw (
+
+Gnome2::DateEdit
+    set_flags set_popup_range set_time  
+
+)], [qw (
+
+Gnome2::Druid
+    append_page set_buttons_sensitive insert_page set_page prepend_page
+    set_show_finish set_show_help
+
+)], [qw (
+
+Gnome2::DruidPage
+    finish prepare 
+
+)], [qw (
+
+Gnome2::DruidPageEdge
+    set_bg_color set_logo_bg_color set_logo set_text_color set_text
+    set_textbox_color set_title_color set_title set_top_watermark set_watermark
+
+)], [qw (
+
+Gnome2::DruidPageStandard
+    append_item set_background set_contents_background set_logo_background
+    set_logo set_title_foreground set_title set_top_watermark
+
+)], [qw (
+
+Gnome2::DruidPageStandard
+    append_history clear_history set_history_id set_max_saved prepend_history
+
+)], [qw (
+
+Gnome2::FileEntry
+    set_default_path set_directory_entry set_filename set_modal set_title
+
+)], [qw (
+
+Gnome2::FontPicker
+    fi_set_show_size fi_set_use_font_in_label set_mode set_preview_text set_title
+    uw_set_widget
+
+)], [qw (
+
+Gnome2::GConf::Client
+    add_dir clear_cache set_error_handling set get_list notify_remove get_pair
+    preload remove_dir suggest_sync
+
+)], [qw (
+
+Gnome2::GConf::Engine
+    notify_remove remove_dir suggest_sync 
+
+)], [qw (
+
+Gnome2::HRef
+    set_label set_text set_url
+
+)], [qw (
+
+Gnome2::IconEntry
+    set_browse_dialog_title set_history_id set_max_saved set_pixmap_subdir
+
+)], [qw (
+
+Gnome2::IconList
+    clear set_col_spacing focus_icon freeze set_hadjustment set_icon_border
+    set_icon_width insert insert_pixbuf moveto remove set_row_spacing
+    select_icon set_selection_mode set_separators set_text_spacing thaw
+    unselect_icon set_vadjustment
+
+)], [qw (
+
+Gnome2::IconSelection
+    add_defaults add_directory clear select_icon show_icons stop_loading
+
+)], [qw (
+
+Gnome2::IconTextItem
+    configure focus select setxy start_editing stop_editing
+
+)], [qw (
+
+Gnome2::IconTheme
+    set_allow_svg append_search_path set_custom_theme prepend_search_path
+    set_search_path
+
+)], [qw (
+
+Gnome2::PasswordDialog
+    set_password set_readonly_username set_username
+
+)], [qw (
+
+Gnome2::PixmapEntry
+    set_pixmap_subdir set_preview set_preview_size
+
+)], [qw (
+
+Gnome2::PopupMenu
+    add_popup_items append_from attach_to do_popup
+
+)], [qw (
+
+Gnome2::Print::Config
+    dump
+
+)], [qw (
+
+Gnome2::Print::Dialog
+    set_copies
+
+)], [qw (
+
+Gnome2::Print::FontPreview
+    set_color set_font set_phrase
+
+)], [qw (
+
+Gnome2::Print::FontSelection
+    set_font
+
+)], [qw (
+
+Gnome2::Print::GlyphList
+    advance font glyph kerning letterspace moveto rmoveto text_dumb
+
+)], [qw (
+
+Gnome2::Print::UnitSelector
+    add_adjustment set_bases remove_adjustment set_unit  
+
+)], [qw (
+
+Gnome2::Rsvg::Handle
+    set_dpi set_size_callback 
+
+)], [qw (
+
+Gnome2::Scores
+    set_color set_colors set_current_player set_def_color set_logo_label
+    set_logo_label_title set_logo_pixmap set_logo_widget
+
+)], [qw (
+
+Gnome2::ThumbnailFactory
+    create_failed_thumbnail save_thumbnail  
+
+)], [qw (
+
+Gnome2::VFS::Application
+    add_mime_type set_bool_value clear_mime_types remove_application
+    remove_mime_type unset_key set_value
+
+)], [qw (
+
+Gnome2::VFS::Async::Handle
+    cancel close read write
+
+)], [qw (
+
+Gnome2::VFS::Mime::Application
+    save
+
+)], [qw (
+
+Gnome2::VFS::URI
+    set_host_name set_host_port set_password set_user_name  
+
+)], [qw (
+
+Gnome2::Vte::Terminal
+    set_allow_bold set_audible_bellâ set_background_image_file
+    set_background_image set_background_saturation set_background_tint_color
+    set_background_transparent set_backspace_binding set_color_background
+    set_color_bold set_color_dim set_color_foreground set_colors copy_clipboard
+    copy_primary set_cursor_blinks set_default_colors set_delete_binding
+    set_emulation set_encoding feed feed_child set_font_from_string set_font
+    im_append_menuitems match_clear_all match_remove match_set_cursor
+    match_set_cursor_type set_mouse_autohide paste_clipboard paste_primary
+    reset set_scroll_background set_scroll_on_keystroke set_scroll_on_output
+    set_scrollback_lines set_size set_visible_bell set_word_chars
+
+)], [qw (
+
+Gnome2::Window
+    toplevel_set_title 
+
+)], [qw (
+
+Gnome2::Wnck::Pager
+    set_n_rows set_orientation set_screen set_shadow_type set_show_all  
+
+)], [qw (
+
+Gnome2::Wnck::Screen
+    change_workspace_count force_update move_viewport release_workspace_layout
+    toggle_showing_desktop
+
+)], [qw (
+
+Gnome2::Wnck::Tasklist
+    set_grouping_limit set_icon_loader set_include_all_workspaces
+    set_minimum_height set_minimum_width set_screen
+    set_switch_workspace_on_unminimize
+
+)], [qw (
+
+Gnome2::Wnck::Window
+    activate activate activate_transient activate_transient close close
+    set_icon_geometry keyboard_move keyboard_size maximize
+    maximize_horizontally maximize_vertically minimize move_to_workspace pin
+    shade set_skip_pager set_skip_tasklist stick unmaximize
+    unmaximize_horizontally unmaximize_vertically unminimize unminimize unpin
+    unshade unstick
+
+)], [qw (
+
+Gnome2::Wnck::Workspace
+    activate activate change_name 
+
+)],
+)
 );
 
 package Gtk2Fu;
