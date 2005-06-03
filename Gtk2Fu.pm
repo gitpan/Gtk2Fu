@@ -72,201 +72,257 @@ return the widget. If you need one that is not yet done, mail me at
 the derivated methods are implemented only for original methods that return
 nothing (void). Here is the list of derivated methodes, ordered by classes:
 
-Gnome2::App
-    add_dock_item add_toolbar set_contents create_menus create_toolbar
-    enable_layout_config insert_menus install_menu_hints set_menus
-    remove_menu_range remove_menus set_statusbar_custom set_statusbar
-    set_toolbar
+=over 4
 
-Gnome2::AppBar
-    clear_prompt clear_stack set_default install_menu_hints pop
-    set_progress_percentage set_prompt push refresh set_status
+=item Gnome2::App
 
-Gnome2::AppHelper
-    install_menu_hints_ 
+ add_dock_item add_toolbar set_contents create_menus create_toolbar
+ enable_layout_config insert_menus install_menu_hints set_menus
+ remove_menu_range remove_menus set_statusbar_custom set_statusbar
+ set_toolbar
 
-Gnome2::Bonobo::Dock
-    add_floating_item_ add_item_ allow_floating_items_ set_client_area_ 
+=item Gnome2::AppBar
 
-Gnome2::Bonobo::Dock
-    set_shadow_type_ 
+ clear_prompt clear_stack set_default install_menu_hints pop
+ set_progress_percentage set_prompt push refresh set_status
 
-Gnome2::Canvas 
-    set_center_scroll_region_ set_dither_ set_pixels_per_unit_ request_redraw_ 
-    set_scroll_region_ scroll_to_ set_stipple_origin_ update_now_ 
+=item Gnome2::AppHelper
 
-Gnome2::Canvas::Bpath
-    set_path_def_ 
+ install_menu_hints_ 
 
-Gnome2::Canvas::Item 
-    affine_absolute_ affine_relative_ grab_focus_ hide_ lower_ lower_to_bottom_ move_ 
-    raise_ raise_to_top_ reparent_ request_update_ reset_bounds_ show_ ungrab_ 
-    update_bbox_ 
+=item Gnome2::Bonobo::Dock
 
-Gnome2::Canvas::PathDef
-    closepath_ closepath_current_ curveto_ ensure_space_ finish_ lineto_ 
-    lineto_moving_ moveto_ reset_ 
+ add_floating_item_ add_item_ allow_floating_items_ set_client_area_ 
 
-Gnome2::Canvas::RichText
-    set_buffer_ copy_clipboard_ cut_clipboard_ paste_clipboard_ 
+=item Gnome2::Bonobo::Dock
 
-Gnome2::Canvas::Shape
-    set_path_def_ 
+ set_shadow_type_ 
 
-Gnome2::Client
-    add_static_arg_ set_clone_command_ connect_ set_current_directory_ 
-    set_discard_command_ disconnect_ set_environment_ flush_ 
-    set_global_config_prefix_ set_priority_ request_interaction_ request_phase_2_ 
-    request_save_ set_resign_command_ set_restart_command_ set_restart_style_ 
-    save_any_dialog_ save_error_dialog_ set_shutdown_command_ 
+=item Gnome2::Canvas 
 
-Gnome2::ColorPicker
-    set_d_ set_dither_ set_i16_ set_i8_ set_title_ set_use_alpha_  
+ set_center_scroll_region_ set_dither_ set_pixels_per_unit_ request_redraw_ 
+ set_scroll_region_ scroll_to_ set_stipple_origin_ update_now_ 
 
-Gnome2::DateEdit
-    set_flags_ set_popup_range_ set_time_  
+=item Gnome2::Canvas::Bpath
 
-Gnome2::Druid
-    append_page_ set_buttons_sensitive_ insert_page_ set_page_ prepend_page_ 
-    set_show_finish_ set_show_help_ 
+ set_path_def_ 
 
-Gnome2::DruidPage
-    finish_ prepare_ 
+=item Gnome2::Canvas::Item 
 
-Gnome2::DruidPageEdge
-    set_bg_color_ set_logo_bg_color_ set_logo_ set_text_color_ set_text_ 
-    set_textbox_color_ set_title_color_ set_title_ set_top_watermark_ set_watermark_ 
+ affine_absolute_ affine_relative_ grab_focus_ hide_ lower_ lower_to_bottom_ move_ 
+ raise_ raise_to_top_ reparent_ request_update_ reset_bounds_ show_ ungrab_ 
+ update_bbox_ 
 
-Gnome2::DruidPageStandard
-    append_item_ set_background_ set_contents_background_ set_logo_background_ 
-    set_logo_ set_title_foreground_ set_title_ set_top_watermark_ 
+=item Gnome2::Canvas::PathDef
 
-Gnome2::DruidPageStandard
-    append_history_ clear_history_ set_history_id_ set_max_saved_ prepend_history_ 
+ closepath_ closepath_current_ curveto_ ensure_space_ finish_ lineto_ 
+ lineto_moving_ moveto_ reset_ 
 
-Gnome2::FileEntry 
-    set_default_path_ set_directory_entry_ set_filename_ set_modal_ set_title_ 
+=item Gnome2::Canvas::RichText
 
-Gnome2::FontPicker 
-    fi_set_show_size_ fi_set_use_font_in_label_ set_mode_ set_preview_text_ set_title_ 
-    uw_set_widget_ 
+ set_buffer_ copy_clipboard_ cut_clipboard_ paste_clipboard_ 
 
-Gnome2::GConf::Client 
-    add_dir_ clear_cache_ set_error_handling_ set_ get_list_ notify_remove_ get_pair_ 
-    preload_ remove_dir_ suggest_sync_ 
+=item Gnome2::Canvas::Shape
 
-Gnome2::GConf::Engine 
-    notify_remove_ remove_dir_ suggest_sync_ 
+ set_path_def_ 
 
-Gnome2::HRef 
-    set_label_ set_text_ set_url_ 
+=item Gnome2::Client
 
-Gnome2::IconEntry 
-    set_browse_dialog_title_ set_history_id_ set_max_saved_ set_pixmap_subdir_ 
+ add_static_arg_ set_clone_command_ connect_ set_current_directory_ 
+ set_discard_command_ disconnect_ set_environment_ flush_ 
+ set_global_config_prefix_ set_priority_ request_interaction_ request_phase_2_ 
+ request_save_ set_resign_command_ set_restart_command_ set_restart_style_ 
+ save_any_dialog_ save_error_dialog_ set_shutdown_command_ 
 
-Gnome2::IconList 
-    clear_ set_col_spacing_ focus_icon_ freeze_ set_hadjustment_ set_icon_border_ 
-    set_icon_width_ insert_ insert_pixbuf_ moveto_ remove_ set_row_spacing_ 
-    select_icon_ set_selection_mode_ set_separators_ set_text_spacing_ thaw_ 
-    unselect_icon_ set_vadjustment_ 
+=item Gnome2::ColorPicker
 
-Gnome2::IconSelection 
-    add_defaults_ add_directory_ clear_ select_icon_ show_icons_ stop_loading_ 
+ set_d_ set_dither_ set_i16_ set_i8_ set_title_ set_use_alpha_  
 
-Gnome2::IconTextItem 
-    configure_ focus_ select_ setxy_ start_editing_ stop_editing_ 
+=item Gnome2::DateEdit
 
-Gnome2::IconTheme 
-    set_allow_svg_ append_search_path_ set_custom_theme_ prepend_search_path_ 
-    set_search_path_ 
+ set_flags_ set_popup_range_ set_time_  
 
-Gnome2::PasswordDialog 
-    set_password_ set_readonly_username_ set_username_ 
+=item Gnome2::Druid
 
-Gnome2::PixmapEntry 
-    set_pixmap_subdir_ set_preview_ set_preview_size_ 
+ append_page_ set_buttons_sensitive_ insert_page_ set_page_ prepend_page_ 
+ set_show_finish_ set_show_help_ 
 
-Gnome2::PopupMenu 
-    add_popup_items_ append_from_ attach_to_ do_popup_ 
+=item Gnome2::DruidPage
 
-Gnome2::Print::Config 
-    dump_ 
+ finish_ prepare_ 
 
-Gnome2::Print::Dialog 
-    set_copies_ 
+=item Gnome2::DruidPageEdge
 
-Gnome2::Print::FontPreview 
-    set_color_ set_font_ set_phrase_ 
+ set_bg_color_ set_logo_bg_color_ set_logo_ set_text_color_ set_text_ 
+ set_textbox_color_ set_title_color_ set_title_ set_top_watermark_ set_watermark_ 
 
-Gnome2::Print::FontSelection 
-    set_font_ 
+=item Gnome2::DruidPageStandard
 
-Gnome2::Print::GlyphList 
-    advance_ font_ glyph_ kerning_ letterspace_ moveto_ rmoveto_ text_dumb_ 
+ append_item_ set_background_ set_contents_background_ set_logo_background_ 
+ set_logo_ set_title_foreground_ set_title_ set_top_watermark_ 
 
-Gnome2::Print::UnitSelector 
-    add_adjustment_ set_bases_ remove_adjustment_ set_unit_  
+=item Gnome2::DruidPageStandard
 
-Gnome2::Rsvg::Handle 
-    set_dpi_ set_size_callback_ 
+ append_history_ clear_history_ set_history_id_ set_max_saved_ prepend_history_ 
 
-Gnome2::Scores 
-    set_color_ set_colors_ set_current_player_ set_def_color_ set_logo_label_ 
-    set_logo_label_title_ set_logo_pixmap_ set_logo_widget_ 
+=item Gnome2::FileEntry 
 
-Gnome2::ThumbnailFactory 
-    create_failed_thumbnail_ save_thumbnail_  
+ set_default_path_ set_directory_entry_ set_filename_ set_modal_ set_title_ 
 
-Gnome2::VFS::Application 
-    add_mime_type_ set_bool_value_ clear_mime_types_ remove_application_ 
-    remove_mime_type_ unset_key_ set_value_ 
+=item Gnome2::FontPicker 
 
-Gnome2::VFS::Async::Handle 
-    cancel_ close_ read_ write_ 
+ fi_set_show_size_ fi_set_use_font_in_label_ set_mode_ set_preview_text_ set_title_ 
+ uw_set_widget_ 
 
-Gnome2::VFS::Mime::Application 
-    save_ 
+=item Gnome2::GConf::Client 
 
-Gnome2::VFS::URI 
-    set_host_name_ set_host_port_ set_password_ set_user_name_  
+ add_dir_ clear_cache_ set_error_handling_ set_ get_list_ notify_remove_ get_pair_ 
+ preload_ remove_dir_ suggest_sync_ 
 
-Gnome2::Vte::Terminal 
-    set_allow_bold_ set_audible_bellâ_ set_background_image_file_ 
-    set_background_image_ set_background_saturation_ set_background_tint_color_ 
-    set_background_transparent_ set_backspace_binding_ set_color_background_ 
-    set_color_bold_ set_color_dim_ set_color_foreground_ set_colors_ copy_clipboard_ 
-    copy_primary_ set_cursor_blinks_ set_default_colors_ set_delete_binding_ 
-    set_emulation_ set_encoding_ feed_ feed_child_ set_font_from_string_ set_font_ 
-    im_append_menuitems_ match_clear_all_ match_remove_ match_set_cursor_ 
-    match_set_cursor_type_ set_mouse_autohide_ paste_clipboard_ paste_primary_ 
-    reset_ set_scroll_background_ set_scroll_on_keystroke_ set_scroll_on_output_ 
-    set_scrollback_lines_ set_size_ set_visible_bell_ set_word_chars_ 
+=item Gnome2::GConf::Engine 
 
-Gnome2::Window 
-    toplevel_set_title_ 
+ notify_remove_ remove_dir_ suggest_sync_ 
 
-Gnome2::Wnck::Pager 
-    set_n_rows_ set_orientation_ set_screen_ set_shadow_type_ set_show_all_  
+=item Gnome2::HRef 
 
-Gnome2::Wnck::Screen 
-    change_workspace_count_ force_update_ move_viewport_ release_workspace_layout_ 
-    toggle_showing_desktop_ 
+ set_label_ set_text_ set_url_ 
 
-Gnome2::Wnck::Tasklist 
-    set_grouping_limit_ set_icon_loader_ set_include_all_workspaces_ 
-    set_minimum_height_ set_minimum_width_ set_screen_ 
-    set_switch_workspace_on_unminimize_ 
+=item Gnome2::IconEntry 
 
-Gnome2::Wnck::Window 
-    activate_ activate_ activate_transient_ activate_transient_ close_ close_ 
-    set_icon_geometry_ keyboard_move_ keyboard_size_ maximize_ 
-    maximize_horizontally_ maximize_vertically_ minimize_ move_to_workspace_ pin_ 
-    shade_ set_skip_pager_ set_skip_tasklist_ stick_ unmaximize_ 
-    unmaximize_horizontally_ unmaximize_vertically_ unminimize_ unminimize_ unpin_ 
-    unshade_ unstick_ 
+ set_browse_dialog_title_ set_history_id_ set_max_saved_ set_pixmap_subdir_ 
 
-Gnome2::Wnck::Workspace 
-    activate_ activate_ change_name_ 
+=item Gnome2::IconList 
+
+ clear_ set_col_spacing_ focus_icon_ freeze_ set_hadjustment_ set_icon_border_ 
+ set_icon_width_ insert_ insert_pixbuf_ moveto_ remove_ set_row_spacing_ 
+ select_icon_ set_selection_mode_ set_separators_ set_text_spacing_ thaw_ 
+ unselect_icon_ set_vadjustment_ 
+
+=item Gnome2::IconSelection 
+
+ add_defaults_ add_directory_ clear_ select_icon_ show_icons_ stop_loading_ 
+
+=item Gnome2::IconTextItem 
+
+ configure_ focus_ select_ setxy_ start_editing_ stop_editing_ 
+
+=item Gnome2::IconTheme 
+
+ set_allow_svg_ append_search_path_ set_custom_theme_ prepend_search_path_ 
+ set_search_path_ 
+
+=item Gnome2::PasswordDialog 
+
+ set_password_ set_readonly_username_ set_username_ 
+
+=item Gnome2::PixmapEntry 
+
+ set_pixmap_subdir_ set_preview_ set_preview_size_ 
+
+=item Gnome2::PopupMenu 
+
+ add_popup_items_ append_from_ attach_to_ do_popup_ 
+
+=item Gnome2::Print::Config 
+
+ dump_ 
+
+=item Gnome2::Print::Dialog 
+
+ set_copies_ 
+
+=item Gnome2::Print::FontPreview 
+
+ set_color_ set_font_ set_phrase_ 
+
+=item Gnome2::Print::FontSelection 
+
+ set_font_ 
+
+=item Gnome2::Print::GlyphList 
+
+ advance_ font_ glyph_ kerning_ letterspace_ moveto_ rmoveto_ text_dumb_ 
+
+=item Gnome2::Print::UnitSelector 
+
+ add_adjustment_ set_bases_ remove_adjustment_ set_unit_  
+
+=item Gnome2::Rsvg::Handle 
+
+ set_dpi_ set_size_callback_ 
+
+=item Gnome2::Scores 
+
+ set_color_ set_colors_ set_current_player_ set_def_color_ set_logo_label_ 
+ set_logo_label_title_ set_logo_pixmap_ set_logo_widget_ 
+
+=item Gnome2::ThumbnailFactory 
+
+ create_failed_thumbnail_ save_thumbnail_  
+
+=item Gnome2::VFS::Application 
+
+ add_mime_type_ set_bool_value_ clear_mime_types_ remove_application_ 
+ remove_mime_type_ unset_key_ set_value_ 
+
+=item Gnome2::VFS::Async::Handle 
+
+ cancel_ close_ read_ write_ 
+
+=item Gnome2::VFS::Mime::Application 
+
+ save_ 
+
+=item Gnome2::VFS::URI 
+
+ set_host_name_ set_host_port_ set_password_ set_user_name_  
+
+=item Gnome2::Vte::Terminal 
+
+ set_allow_bold_ set_audible_bellâ_ set_background_image_file_ 
+ set_background_image_ set_background_saturation_ set_background_tint_color_ 
+ set_background_transparent_ set_backspace_binding_ set_color_background_ 
+ set_color_bold_ set_color_dim_ set_color_foreground_ set_colors_ copy_clipboard_ 
+ copy_primary_ set_cursor_blinks_ set_default_colors_ set_delete_binding_ 
+ set_emulation_ set_encoding_ feed_ feed_child_ set_font_from_string_ set_font_ 
+ im_append_menuitems_ match_clear_all_ match_remove_ match_set_cursor_ 
+ match_set_cursor_type_ set_mouse_autohide_ paste_clipboard_ paste_primary_ 
+ reset_ set_scroll_background_ set_scroll_on_keystroke_ set_scroll_on_output_ 
+ set_scrollback_lines_ set_size_ set_visible_bell_ set_word_chars_ 
+
+=item Gnome2::Window 
+
+ toplevel_set_title_ 
+
+=item Gnome2::Wnck::Pager 
+
+ set_n_rows_ set_orientation_ set_screen_ set_shadow_type_ set_show_all_  
+
+=item Gnome2::Wnck::Screen 
+
+ change_workspace_count_ force_update_ move_viewport_ release_workspace_layout_ 
+ toggle_showing_desktop_ 
+
+=item Gnome2::Wnck::Tasklist 
+
+ set_grouping_limit_ set_icon_loader_ set_include_all_workspaces_ 
+ set_minimum_height_ set_minimum_width_ set_screen_ 
+ set_switch_workspace_on_unminimize_ 
+
+=item Gnome2::Wnck::Window 
+
+ activate_ activate_ activate_transient_ activate_transient_ close_ close_ 
+ set_icon_geometry_ keyboard_move_ keyboard_size_ maximize_ 
+ maximize_horizontally_ maximize_vertically_ minimize_ move_to_workspace_ pin_ 
+ shade_ set_skip_pager_ set_skip_tasklist_ stick_ unmaximize_ 
+ unmaximize_horizontally_ unmaximize_vertically_ unminimize_ unminimize_ unpin_ 
+ unshade_ unstick_ 
+
+=item Gnome2::Wnck::Workspace 
+
+ activate_ activate_ change_name_ 
+
+=back
 
 =cut
 
@@ -291,7 +347,7 @@ use vars qw(@ISA %EXPORT_TAGS @EXPORT_OK $VERSION);
 $EXPORT_TAGS{all} = [ map { @$_ } values %EXPORT_TAGS ];
 @EXPORT_OK = map { @$_ } values %EXPORT_TAGS;
 
-$VERSION = '0.08';
+$VERSION = '0.09';
 
 =head2 METHODS for creation
 
@@ -405,41 +461,27 @@ sub create_scrolled_window {
      }
  }
 
+=back
+
 =head2 METHODS for interaction with user
 
 These methods create some widgets, launch a main loop, then return a value.
 
 The ask_from_dialog methods display a dialog box and returns a value
 corresponding to the button clicked. The dialogs can take $options. $options is
-a HASHREF with keys/values tha can be :
+a HASHREF with keys/values that can be :
 
-=over 2
+B<C<stock>> => STRING :  an icon for the dialog box
 
-=item stock => STRING
+B<C<cancel>> => BOOLEAN :  if set to 1, a cancel button will be added
 
-an icon for the dialog box
+B<C<width>> => INTEGER :  set a specific width to the dialog box
 
-=item cancel => BOOLEAN
+B<C<width>> => INTEGER : set a specific height to the dialog box
 
-if set to 1, a cancel button will be added
+B<C<transient>> => BOOLEAN : set the transient state of the dialog box
 
-=item width => INTEGER
-
-set a specific width to the dialog box
-
-=item width => INTEGER
-
-set a specific height to the dialog box
-
-=item transient => BOOLEAN
-
-set the transient state of the dialog box
-
-=item use_markup => BOOLEAN
-
-use markup or not
-
-=back
+B<C<use_markup>> => BOOLEAN : use markup or not
 
 =item ask_from_info_dialog()
 
