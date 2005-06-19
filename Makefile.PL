@@ -1,13 +1,16 @@
-#!/usr/bin/perl
-
-require 5.008;
+use strict;
+use warnings;
 use ExtUtils::MakeMaker;
 
 WriteMakefile(
-    AUTHOR => 'dams <dams@gentoo.org>',
-    NAME => 'Gtk2Fu',
+    NAME                => 'Gtk2Fu',
+    AUTHOR              => 'dams <dams@gentoo.org>',
+    VERSION_FROM        => 'lib/Gtk2Fu.pm',
+    ABSTRACT_FROM       => 'lib/Gtk2Fu.pm',
+    PL_FILES            => {},
     PREREQ_PM => {
-	'Gtk2' => 0,
+        'Test::More' => 0,
     },
-    VERSION_FROM => 'Gtk2Fu.pm',
+    dist                => { COMPRESS => 'gzip -9f', SUFFIX => 'gz', },
+    clean               => { FILES => 'Gtk2Fu-*' },
 );

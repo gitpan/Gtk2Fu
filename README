@@ -1,0 +1,33 @@
+Gtk2Fu
+
+gtk2-fu is a layer on top of perl gtk2, that brings power, simplicity and speed of development. It brings additional methods to ease the widget creation among other things. But the most important feature is that it brings you a lot of derivated methods from existing methods, that does exactly the same thing, except that ir returns the widget.
+
+See the POD for more information on the module.
+
+Gtk2Fu requires perl-gtk2. It detects at run-time if perl-Gnome2 is available.
+
+INSTALLATION
+
+To install this module, run the following commands:
+
+    perl Makefile.PL
+    make
+    make test
+    make install
+
+
+Alternatively, to install with Module::Build, you can use the following commands:
+
+    perl Build.PL
+    ./Build
+    ./Build test
+    ./Build install
+
+
+COPYRIGHT AND LICENCE
+
+Copyright (C) 2005 dams <dams@gentoo.org>
+
+This library is free software; you can redistribute it and/or modify
+it under the same terms as Perl itself.
+

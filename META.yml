@@ -1,11 +1,26 @@
-# http://module-build.sourceforge.net/META-spec.html
-#XXXXXXX This is a prototype!!!  It will change in the future!!! XXXXX#
-name:         Gtk2Fu
-version:      0.09
-version_from: Gtk2Fu.pm
-installdirs:  site
+--- #YAML:1.0
+name: Gtk2Fu
+version: 0.10
+author: dams <dams@gentoo.org>
+abstract: |-
+  GTK2 Forked Ultimate, a powerful layer on top of Gtk2. (forked from ugtk2.)
+license: perl
 requires:
-    Gtk2:                          0
-
-distribution_type: module
-generated_by: ExtUtils::MakeMaker version 6.17
+  Test::More: 0
+provides:
+  Gtk2::Box:
+    file: lib/Gtk2Fu.pm
+    version: 0.10
+  Gtk2::Widget:
+    file: lib/Gtk2Fu.pm
+    version: 0.10
+  Gtk2::Window:
+    file: lib/Gtk2Fu.pm
+    version: 0.10
+  Gtk2::WrappedLabel:
+    file: lib/Gtk2Fu.pm
+    version: 0.10
+  Gtk2Fu:
+    file: lib/Gtk2Fu.pm
+    version: 0.10
+generated_by: Module::Build version 0.25

@@ -1,0 +1,8 @@
+Revision history for Gtk2Fu
+
+0.10    2005-06-19
+        switch to Module::Build
+	added tests
+	added documentation
+	exhaustive Gnome2, Gtk2 and Gdk2 coverage
+
