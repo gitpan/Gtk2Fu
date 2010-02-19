@@ -9,11 +9,11 @@ Gtk2Fu - GTK2 Forked Ultimate, a powerful layer on top of Gtk2. (forked from ugt
 
 =head1 VERSION
 
-Version 0.10
+Version 0.11
 
 =cut
 
-our $VERSION = '0.10';
+our $VERSION = '0.11';
 
 =head1 INTRODUCTION
 
@@ -903,7 +903,6 @@ nothing (void). Here is the list of derivated methodes, ordered by classes:
 
 =cut
 
-use strict;
 use Gtk2;
 use vars qw(@ISA %EXPORT_TAGS @EXPORT_OK);
 @ISA = qw(Exporter);
@@ -2296,8 +2295,6 @@ Gtk2::Menu
 )
 );
 
-package Gtk2Fu;
-
 #private functions
 sub _is_installed { (my $mod = "$_[0].pm" ) =~ s!::!/!g; -e "$_/$mod" && return 1 for @INC }
 sub _member { my $e = shift; foreach (@_) { $e eq $_ and return 1 } 0 }
@@ -2373,7 +2370,7 @@ sub _if_($@) {
 
 =head1 AUTHOR
 
-dams, C<< <dams@gentoo.org> >>
+dams, C<< <dams@cpan.org> >>
 
 =head1 BUGS
 
@@ -2385,7 +2382,7 @@ your bug as I make changes.
 
 =head1 COPYRIGHT & LICENSE
 
-Copyright 2005 dams, All Rights Reserved.
+Copyright 2005-2009 dams, All Rights Reserved.
 
 This program is free software; you can redistribute it and/or modify it
 under the same terms as Perl itself.

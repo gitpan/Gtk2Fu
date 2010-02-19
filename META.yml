@@ -1,26 +1,30 @@
---- #YAML:1.0
+---
 name: Gtk2Fu
-version: 0.10
-author: dams <dams@gentoo.org>
-abstract: |-
-  GTK2 Forked Ultimate, a powerful layer on top of Gtk2. (forked from ugtk2.)
+version: 0.11
+author:
+  - 'dams <dams@cpan.org>'
+abstract: 'GTK2 Forked Ultimate, a powerful layer on top of Gtk2. (forked from ugtk2.)'
 license: perl
+resources:
+  license: http://dev.perl.org/licenses/
 requires:
+  Gtk2: 0
   Test::More: 0
+configure_requires:
+  Module::Build: 0.34
 provides:
   Gtk2::Box:
     file: lib/Gtk2Fu.pm
-    version: 0.10
   Gtk2::Widget:
     file: lib/Gtk2Fu.pm
-    version: 0.10
   Gtk2::Window:
     file: lib/Gtk2Fu.pm
-    version: 0.10
   Gtk2::WrappedLabel:
     file: lib/Gtk2Fu.pm
-    version: 0.10
   Gtk2Fu:
     file: lib/Gtk2Fu.pm
-    version: 0.10
-generated_by: Module::Build version 0.25
+    version: 0.11
+generated_by: Module::Build version 0.34
+meta-spec:
+  url: http://module-build.sourceforge.net/META-spec-v1.4.html
+  version: 1.4
